@@ -1,3 +1,14 @@
+<h1>{{ $ctrl.hero }}</h1>
+
+<form data-ng-submit="$ctrl.add($ctrl.form)">
+    <input type="text" data-ng-model="$ctrl.form.name" placeholder="Name">
+    <input type="tel" data-ng-model="$ctrl.form.telephone" placeholder="Telephone">
+    <input type="email" data-ng-model="$ctrl.form.email" placeholder="E-mail">
+
+    <button type="submit">Create a new contact</button>
+</form>
+
+<!--
 <h1>{{ $ctrl.hello }}</h1>
 
 <input type="text" data-ng-model="$ctrl.person.name">
@@ -24,3 +35,4 @@
 <div app-directive></div>
 
 <hero></hero>
+-->

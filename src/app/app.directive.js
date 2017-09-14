@@ -1,6 +1,6 @@
 angular
   .module('app')
-  .directive('appDirective', function() {
+  .directive('appDirective', function () {
     return {
       // restrict:
       template: '<h1>My Directive<h1>',
@@ -10,8 +10,8 @@ angular
         lastname: '@'
       },
       // required:
-      link: function($scope, $element, $attr) {
+      link: function ($scope) {// , $element, $attr) {
         console.log($scope);
       }
-    }
+    };
   });

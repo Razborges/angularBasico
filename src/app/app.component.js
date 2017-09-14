@@ -9,7 +9,7 @@ angular
     bindings: {
       hero: '<'
     },
-    controller: function() {
+    controller: function () {
       this.hero = 'This is a new component from Angular';
     }
   });
