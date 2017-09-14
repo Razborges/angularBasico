@@ -9,6 +9,19 @@ angular
         lastname: 'TesteSobre'
       };
 
+      this.list = [{
+          name: 'TesteName1',
+          lastname: 'TesteSobre1'
+        },
+        {
+          name: 'TesteName2',
+          lastname: 'TesteSobre2'
+        },
+        {
+          name: 'TesteName3',
+          lastname: 'TesteSobre3'
+      }]
+
       this.alertMe = function() {
         alert(this.person.name + ' ' + this.person.lastname);
       };

@@ -12,3 +12,13 @@
 
 <input type="submit" data-ng-click="$ctrl.sum(num1, num2)" value="SUM">
 <input type="submit" data-ng-click="$ctrl.sub(num1, num2)" value="SUB">
+
+<ul>
+    <li data-ng-repeat="item in $ctrl.list">
+        <p>{{item.name}}</p>
+        <p data-ng-bind="item.lastname"></p>
+    </li>
+</ul>
+
+<app-directive name="Nome1" lastname="Sobrenome1"></app-directive>
+<div app-directive></div>
