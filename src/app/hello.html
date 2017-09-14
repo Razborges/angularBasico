@@ -6,3 +6,9 @@
 
 {{ $ctrl.person.name }}
 {{ $ctrl.person.lastname }}
+
+<input type="number" data-ng-model="num1">
+<input type="number" data-ng-model="num2">
+
+<input type="submit" data-ng-click="$ctrl.sum(num1, num2)" value="SUM">
+<input type="submit" data-ng-click="$ctrl.sub(num1, num2)" value="SUB">
