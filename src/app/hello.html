@@ -16,6 +16,7 @@
             <th>Name</th>
             <th>Telephone</th>
             <th>Email</th>
+            <th>Actions</th>
         </tr>
     </thead>
     <tbody>
@@ -23,6 +24,9 @@
             <td data-ng-bind="item.name"></td>
             <td data-ng-bind="item.telephone"></td>
             <td data-ng-bind="item.email"></td>
+            <td>
+                <button type="button" data-ng-click="$ctrl.edit(item)">Edit</button>
+            </td>
         </tr>
     </tbody>
 </table>

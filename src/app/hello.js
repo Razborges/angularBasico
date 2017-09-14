@@ -4,17 +4,21 @@ angular
     templateUrl: 'app/hello.html',
     controller: function (ContactFactory) {
       var vm = this;
+      var id = 0;
+
       vm.hero = 'New contact';
       vm.heroList = 'List a contact';
       vm.list = [];
 
       vm.form = {
+        index: 0,
         name: '',
         telephone: '',
         email: ''
       };
 
       vm.add = add;
+      vm.edit = edit;
 
       (function () {
         vm.list = ContactFactory.list();
@@ -26,12 +30,39 @@ angular
           console.log('You must need a valid contact');
           return;
         }
+
+        if (contact.id) {
+          clean();
+          ContactFactory.edit(contact);
+          return;
+        }
+
+        contact.id = id + 1;
+
+        clean();
         ContactFactory.add(contact);
+      }
+
+      function edit(contact) {
+        if (!contact) {
+          console.log('You must need a valid contact');
+          return;
+        }
+
+        vm.form.name = contact.name;
+        vm.form.telephone = contact.telephone;
+        vm.form.email = contact.email;
+        vm.form.id = contact.id;
+      }
+
+      function clean() {
         vm.form = {
+          id: 0,
           name: '',
           telephone: '',
           email: ''
         };
+        return vm.form;
       }
     }
   });
