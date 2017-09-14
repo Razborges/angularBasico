@@ -4,3 +4,6 @@ dist/
 node_modules
 bower_components
 *-lock.json
+.editorconfig
+.gitattributes
+.yo-rc.json
