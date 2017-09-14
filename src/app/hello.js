@@ -5,6 +5,8 @@ angular
     controller: function (ContactFactory) {
       var vm = this;
       vm.hero = 'New contact';
+      vm.heroList = 'List a contact';
+      vm.list = [];
 
       vm.form = {
         name: '',
@@ -13,6 +15,11 @@ angular
       };
 
       vm.add = add;
+
+      (function () {
+        vm.list = ContactFactory.list();
+        return vm.list;
+      })();
 
       function add(contact) {
         if (!contact) {

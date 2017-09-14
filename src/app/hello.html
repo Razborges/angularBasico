@@ -8,6 +8,25 @@
     <button type="submit">Create a new contact</button>
 </form>
 
+<h1>{{ $ctrl.heroList }}</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Telephone</th>
+            <th>Email</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr data-ng-repeat="item in $ctrl.list">
+            <td data-ng-bind="item.name"></td>
+            <td data-ng-bind="item.telephone"></td>
+            <td data-ng-bind="item.email"></td>
+        </tr>
+    </tbody>
+</table>
+
 <!--
 <h1>{{ $ctrl.hello }}</h1>
 
