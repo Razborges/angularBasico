@@ -19,6 +19,7 @@ angular
 
       vm.add = add;
       vm.edit = edit;
+      vm.remove = remove;
 
       (function () {
         vm.list = ContactFactory.list();
@@ -53,6 +54,15 @@ angular
         vm.form.telephone = contact.telephone;
         vm.form.email = contact.email;
         vm.form.id = contact.id;
+      }
+
+      function remove(contact) {
+        if (!contact) {
+          console.log('You must need a valid contact');
+          return;
+        }
+
+        return ContactFactory.remove(contact);
       }
 
       function clean() {

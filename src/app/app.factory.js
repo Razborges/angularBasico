@@ -6,6 +6,7 @@ angular
     factory.add = add;
     factory.list = list;
     factory.edit = edit;
+    factory.remove = remove;
 
     function add(contact) {
       ContactService.push(contact);
@@ -25,6 +26,20 @@ angular
       });
       if (index !== null) {
         list.splice(index, 1, contact);
+      }
+    }
+
+    function remove(contact) {
+      var list = ContactService.getList();
+      var index = null;
+
+      list.filter(function (el, pos) {
+        index = pos;
+        return el.id === contact.id;
+      });
+
+      if (index !== null) {
+        return list.splice(index, 1);
       }
     }
 
