@@ -1,1 +1,8 @@
 <h1>{{ $ctrl.hello }}</h1>
+
+<input type="text" data-ng-model="$ctrl.person.name">
+<input type="text" data-ng-model="$ctrl.person.lastname">
+<input type="submit" data-ng-click="$ctrl.alertMe()">
+
+{{ $ctrl.person.name }}
+{{ $ctrl.person.lastname }}
